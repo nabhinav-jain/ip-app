@@ -6,6 +6,7 @@ const GeoLocationInfo = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const fetchGeoData = async () => {
@@ -22,7 +23,28 @@ const GeoLocationInfo = () => {
     };
 
     fetchGeoData();
+    
   }, []);
+
+  useEffect(() => {
+    const updateLayout = () => {
+      const container = document.querySelector('.two-body-container');
+      const ipInfo = document.querySelector('.ip-info-container');
+  
+      if (window.innerWidth < 768) {
+        container?.classList.add('flex-col');
+        ipInfo?.classList.add('w-full');
+      } else {
+        container?.classList.remove('flex-col');
+        ipInfo?.classList.remove('w-full');
+      }
+    };
+  
+    updateLayout();
+    window.addEventListener('resize', updateLayout);
+    return () => window.removeEventListener('resize', updateLayout);
+  }, []);
+  
 
   if (loading)
     return (
@@ -44,10 +66,8 @@ const GeoLocationInfo = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 p-4">
-      <div class="flex items-stretch justify-center w-full ">
-        <div className="w-1/3 p-4 ">
-          <IpInfo />
-        </div>
+      <div class="two-body-container flex items-stretch justify-center w-full ">
+    
         <div clas="p-4 ">
           <p className="text-center font-bold text-2xl">
             We do not store or share any of the info
@@ -89,6 +109,9 @@ const GeoLocationInfo = () => {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="ip-info-container w-1/3 p-4 ">
+          <IpInfo />
         </div>
       </div>
     </div>
