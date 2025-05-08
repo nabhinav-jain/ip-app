@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Map from './map'
+
 
 const GeoLocationInfo = () => {
   const [data, setData] = useState(null);
@@ -24,21 +26,15 @@ const GeoLocationInfo = () => {
 
   if (loading) return <p>Loading user info...</p>;
   if (error) return <p>{error}</p>;
-  console.log(data)
-  const mapUrl = `https://www.openstreetmap.org/?mlat=${data.latitude}&mlon=${data.longitude}#map=15/${data.latitude}/${data.longitude}`;
-  return (
+
+  
+
+
+ return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 p-4">
       <div className="w-full max-w-3xl mb-6">
         <div className="rounded-lg overflow-hidden shadow-lg border border-gray-300">
-          <iframe
-            title="User Location"
-            src={mapUrl}
-            width="100%"
-            height="300"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
+         <Map latitude={data.latitude} longitude={data.longitude} />
         </div>
       </div>
 
