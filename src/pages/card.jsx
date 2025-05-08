@@ -26,24 +26,7 @@ const GeoLocationInfo = () => {
     
   }, []);
 
-  useEffect(() => {
-    const updateLayout = () => {
-      const container = document.querySelector('.two-body-container');
-      const ipInfo = document.querySelector('.ip-info-container');
-  
-      if (window.innerWidth < 768) {
-        container?.classList.add('flex-col');
-        ipInfo?.classList.add('w-full');
-      } else {
-        container?.classList.remove('flex-col');
-        ipInfo?.classList.remove('w-full');
-      }
-    };
-  
-    updateLayout();
-    window.addEventListener('resize', updateLayout);
-    return () => window.removeEventListener('resize', updateLayout);
-  }, []);
+ 
   
 
   if (loading)
@@ -66,7 +49,7 @@ const GeoLocationInfo = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 p-4">
-      <div class="two-body-container flex items-stretch justify-center w-full ">
+      <div class="two-body-container flex items-stretch justify-center w-full flex-col md:flex-row">
     
         <div clas="p-4 ">
           <p className="text-center font-bold text-2xl">
@@ -110,7 +93,7 @@ const GeoLocationInfo = () => {
             </ul>
           </div>
         </div>
-        <div className="ip-info-container w-1/3 p-4 ">
+        <div className="ip-info-container w-full md:w-1/3 p-4 ">
           <IpInfo />
         </div>
       </div>
