@@ -24,9 +24,8 @@ const GeoLocationInfo = () => {
 
   if (loading) return <p>Loading user info...</p>;
   if (error) return <p>{error}</p>;
-
-  const mapUrl = `https://maps.google.com/maps?q=${data.latitude},${data.longitude}&z=15&output=embed`;
-
+  console.log(data)
+  const mapUrl = `https://www.openstreetmap.org/?mlat=${data.latitude}&mlon=${data.longitude}#map=15/${data.latitude}/${data.longitude}`;
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 p-4">
       <div className="w-full max-w-3xl mb-6">
