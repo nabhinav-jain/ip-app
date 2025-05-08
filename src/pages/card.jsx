@@ -24,14 +24,30 @@ const GeoLocationInfo = () => {
     fetchGeoData();
   }, []);
 
-  if (loading) return <p>Loading user info...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading)
+    return (
+      <div className="flex items-center justify-center h-64">
+        <p className="text-blue-600 text-lg font-medium animate-pulse">
+          Loading user info...
+        </p>
+      </div>
+    );
+  
+  if (error)
+    return (
+      <div className="flex items-center justify-center h-64">
+        <p className="text-red-500 bg-red-100 border border-red-300 px-4 py-2 rounded-lg shadow-sm text-center max-w-md">
+          {error}
+        </p>
+      </div>
+    );
 
   
 
 
  return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 p-4">
+        <p className='text-center font-bold text-2xl'>We do not store or share any of the info</p>
       <div className="w-full max-w-3xl mb-6">
         <div className="rounded-lg overflow-hidden shadow-lg border border-gray-300">
          <Map latitude={data.latitude} longitude={data.longitude} />
