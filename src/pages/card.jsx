@@ -23,11 +23,7 @@ const GeoLocationInfo = () => {
     };
 
     fetchGeoData();
-    
   }, []);
-
- 
-  
 
   if (loading)
     return (
@@ -48,22 +44,20 @@ const GeoLocationInfo = () => {
     );
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 p-4">
-       <p className="text-center font-bold text-2xl">
-            We do not store or share any of the info
-          </p>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-indigo-800 via-purple-800 to-violet-900 p-4">
+      <p className="text-center font-bold text-2xl">
+        We do not store or share any of the info
+      </p>
       <div class="two-body-container flex items-stretch justify-center w-full flex-col md:flex-row">
-    
         <div className="p-2">
-         
           <div className="w-full max-w-3xl mb-6">
             <div className="rounded-lg overflow-hidden shadow-lg border border-gray-300">
               <Map latitude={data.latitude} longitude={data.longitude} />
             </div>
           </div>
 
-          <div className="bg-white shadow-lg rounded-xl p-2 md:p-6 w-full  ">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
+          <div className="bg-gray-800 shadow-lg rounded-xl p-2 md:p-6 w-full  ">
+            <h2 className="text-2xl font-bold text-center text-black mb-4">
               User Location Details
             </h2>
             <ul className="space-y-2 text-gray-700">

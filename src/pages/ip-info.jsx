@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function IpInfo() {
   return (
-    <div className=" p-4 bg-white shadow-lg rounded-lg text-gray-800 leading-relaxed">
+    <div className=" p-4 bg-gray-800 shadow-lg rounded-lg text-gray-800 leading-relaxed">
       <h2 className="text-2xl font-bold mb-4 text-purple-700">What is an IP Address?</h2>
       <p className="mb-4">
         An <strong>IP address</strong> is like a home address, but for your device on the internet.
