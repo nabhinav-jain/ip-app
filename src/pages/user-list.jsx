@@ -11,7 +11,7 @@ const UserLocationDetails = ({
   organization,
 }) => {
   return (
-    <div className="bg-gradient-to-br from-slate-800 to-gray-900 p-6 rounded-lg shadow-lg">
+    <div className="bg-gray-800 shadow-lg rounded-xl p-2 md:p-6 w-full ">
       <h2 className="text-2xl font-bold text-center text-white mb-4">
         User Location Details
       </h2>

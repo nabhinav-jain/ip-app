@@ -57,9 +57,8 @@ const GeoLocationInfo = () => {
             </div>
           </div>
 
-          <div className="bg-gray-800 shadow-lg rounded-xl p-2 md:p-6 w-full  ">
          <UserLocationDetails  {...data}/>
-          </div>
+         
         </div>
         <div className="ip-info-container w-full py-2 md:w-1/3 ">
           <IpInfo />
