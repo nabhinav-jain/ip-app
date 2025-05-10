@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Map from "./map";
 import IpInfo from "./ip-info";
+import UserLocationDetails from "./user-list";
 
 const GeoLocationInfo = () => {
   const [data, setData] = useState(null);
@@ -57,35 +58,7 @@ const GeoLocationInfo = () => {
           </div>
 
           <div className="bg-gray-800 shadow-lg rounded-xl p-2 md:p-6 w-full  ">
-            <h2 className="text-2xl font-bold text-center text-white mb-4">
-              User Location Details
-            </h2>
-            <ul className="space-y-2 text-white">
-              <li>
-                <strong>IP:</strong> {data.ip}
-              </li>
-              <li>
-                <strong>City:</strong> {data.city}
-              </li>
-              <li>
-                <strong>Region:</strong> {data.region}
-              </li>
-              <li>
-                <strong>Country:</strong> {data.country}
-              </li>
-              <li>
-                <strong>Latitude:</strong> {data.latitude}
-              </li>
-              <li>
-                <strong>Longitude:</strong> {data.longitude}
-              </li>
-              <li>
-                <strong>Timezone:</strong> {data.timezone}
-              </li>
-              <li>
-                <strong>Organization:</strong> {data.organization}
-              </li>
-            </ul>
+         <UserLocationDetails  {...data}/>
           </div>
         </div>
         <div className="ip-info-container w-full py-2 md:w-1/3 ">
