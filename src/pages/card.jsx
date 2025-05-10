@@ -49,12 +49,13 @@ const GeoLocationInfo = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 p-4">
-      <div class="two-body-container flex items-stretch justify-center w-full flex-col md:flex-row">
-    
-        <div clas="p-4 ">
-          <p className="text-center font-bold text-2xl">
+       <p className="text-center font-bold text-2xl">
             We do not store or share any of the info
           </p>
+      <div class="two-body-container flex items-stretch justify-center w-full flex-col md:flex-row">
+    
+        <div className="p-2">
+         
           <div className="w-full max-w-3xl mb-6">
             <div className="rounded-lg overflow-hidden shadow-lg border border-gray-300">
               <Map latitude={data.latitude} longitude={data.longitude} />
