@@ -61,7 +61,7 @@ const GeoLocationInfo = () => {
             </div>
           </div>
 
-          <div className="bg-white shadow-lg rounded-xl p-6 w-full max-w-3xl">
+          <div className="bg-white shadow-lg rounded-xl p-2 md:p-6 w-full  ">
             <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
               User Location Details
             </h2>
@@ -93,7 +93,7 @@ const GeoLocationInfo = () => {
             </ul>
           </div>
         </div>
-        <div className="ip-info-container w-full md:w-1/3 p-4 ">
+        <div className="ip-info-container w-full py-2 md:w-1/3 md:p-4 ">
           <IpInfo />
         </div>
       </div>
