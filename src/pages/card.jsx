@@ -94,7 +94,7 @@ const GeoLocationInfo = () => {
             </ul>
           </div>
         </div>
-        <div className="ip-info-container w-full py-2 md:w-1/3 md:p-4 ">
+        <div className="ip-info-container w-full py-2 md:w-1/3 ">
           <IpInfo />
         </div>
       </div>
