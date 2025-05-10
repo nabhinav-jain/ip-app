@@ -35,7 +35,7 @@ export default function IpInfo() {
       </ul>
 
       <p className="mt-6 text-sm text-gray-600 italic">
-        In short: your IP address tells the internet where to send things — just like your address tells the delivery guy where to bring your food.
+        In short: your IP address tells the internet where to send things just like your address tells the delivery guy where to bring your food.
       </p>
     </div>
   );
