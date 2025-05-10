@@ -57,10 +57,10 @@ const GeoLocationInfo = () => {
           </div>
 
           <div className="bg-gray-800 shadow-lg rounded-xl p-2 md:p-6 w-full  ">
-            <h2 className="text-2xl font-bold text-center text-black mb-4">
+            <h2 className="text-2xl font-bold text-center text-white mb-4">
               User Location Details
             </h2>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-white">
               <li>
                 <strong>IP:</strong> {data.ip}
               </li>
