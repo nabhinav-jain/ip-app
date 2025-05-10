@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function IpInfo() {
   return (
+            <div className="ip-info-container w-full py-2 md:w-1/3 ">
     <div className=" p-4 bg-gray-800 shadow-lg rounded-lg text-gray-800 leading-relaxed">
       <h2 className="text-2xl font-bold mb-4 text-blue-300">What is an IP Address?</h2>
       <p className="mb-4  text-white">
@@ -37,6 +38,7 @@ export default function IpInfo() {
       <p className="mt-6 text-sm text-gray-600 italic text-white">
         In short: your IP address tells the internet where to send things just like your address tells the delivery guy where to bring your food.
       </p>
+    </div>
     </div>
   );
 }
