@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Map from "./map";
-import IpInfo from "./ip-info";
-import UserLocationDetails from "./user-list";
+import LocationInfoSection from "./frontcomp-container";
 
 const GeoLocationInfo = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const fetchGeoData = async () => {
@@ -46,16 +43,7 @@ const GeoLocationInfo = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-indigo-800 via-purple-800 to-violet-900 p-4">
-      <p className="text-center font-bold text-2xl">
-        We do not store or share any of the info
-      </p>
-      <div class="two-body-container flex items-stretch justify-center w-full flex-col md:flex-row">
-        <div className="p-2">
-          <Map latitude={data.latitude} longitude={data.longitude} />
-          <UserLocationDetails {...data} />
-        </div>
-        <IpInfo />
-      </div>
+      <LocationInfoSection data={data} />
     </div>
   );
 };
