@@ -51,17 +51,10 @@ const GeoLocationInfo = () => {
       </p>
       <div class="two-body-container flex items-stretch justify-center w-full flex-col md:flex-row">
         <div className="p-2">
-          <div className="w-full max-w-3xl mb-6">
-            <div className="rounded-lg overflow-hidden shadow-lg border border-gray-300">
-              <Map latitude={data.latitude} longitude={data.longitude} />
-            </div>
-          </div>
-
-         <UserLocationDetails  {...data}/>
-         
+          <Map latitude={data.latitude} longitude={data.longitude} />
+          <UserLocationDetails {...data} />
         </div>
-          <IpInfo />
-       
+        <IpInfo />
       </div>
     </div>
   );
