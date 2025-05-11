@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LocationInfoSection from "./frontcomp-container";
+import IPQuestions from "./ipquestions";
 
 const GeoLocationInfo = () => {
   const [data, setData] = useState(null);
@@ -49,13 +50,17 @@ const GeoLocationInfo = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-indigo-800 via-purple-800 to-violet-900 p-4">
-      {!showipQue && <LocationInfoSection data={data} /> }
-      {showipQue && < IPQuestions />} 
-      <button className="bg-white text-black border border-black px-4 py-2 rounded hover:bg-gray-100" style={{cursor:"pointer"}}
-         onClick={handleIPClick}>
-        Practice IP Questions
-      </button>
-    </div>
+    {!showipQue && <LocationInfoSection data={data} />}
+    {showipQue && <IPQuestions />}
+    <button
+      className="bg-white text-black border border-black px-4 py-2 rounded hover:bg-gray-100"
+      style={{ cursor: "pointer" }}
+      onClick={handleIPClick}
+    >
+      {showipQue ? "Go Back" : "Practice IP Questions"}
+    </button>
+  </div>
+  
   );
 };
 
