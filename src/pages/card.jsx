@@ -5,6 +5,12 @@ const GeoLocationInfo = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showipQue,setShowipQue] = useState(false);
+
+
+  function handleIPClick(){
+    setShowipQue(curr=>!curr);
+  }
 
   useEffect(() => {
     const fetchGeoData = async () => {
@@ -43,8 +49,10 @@ const GeoLocationInfo = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-indigo-800 via-purple-800 to-violet-900 p-4">
-      <LocationInfoSection data={data} />
-      <button className="bg-white text-black border border-black px-4 py-2 rounded hover:bg-gray-100" style={{cursor:"pointer"}}>
+      {!showipQue && <LocationInfoSection data={data} /> }
+      {showipQue && < IPQuestions />} 
+      <button className="bg-white text-black border border-black px-4 py-2 rounded hover:bg-gray-100" style={{cursor:"pointer"}}
+         onClick={handleIPClick}>
         Practice IP Questions
       </button>
     </div>
